@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn 
 import { v4 } from "uuid";
 import { User } from "./User";
 
-@Entity("users_tokens_api_a")
+@Entity("users_tokens")
 class UserTokens {
     
     @PrimaryColumn()

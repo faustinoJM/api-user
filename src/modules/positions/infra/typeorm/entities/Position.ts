@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn,
 import { v4 as uuidv4  } from 'uuid';
 import { Employee } from '../../../../employees/infra/typeorm/entities/Employee';
 
-@Entity('positions_api_a')
+@Entity('positions')
 class Position {
   @PrimaryColumn()
   id: string;

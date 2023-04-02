@@ -14,7 +14,7 @@ const options:  any = {
     // port: 5432,
     // username: "postgres",
     // password: "12345",
-    // database: "api_a",
+    // database: "payroll_test",
     url: "postgres://jhkdfoxm:q_zM2AjeX07zyuWXgCpRLLEMxnX3b-v0@raja.db.elephantsql.com/jhkdfoxm",
     // url: "postgres://elint:uYQvjaysQl0dhEvkcUj8Gxe1p8jsMTLD@dpg-cgj809mbb6mo06k1h0rg-a.oregon-postgres.render.com/payroll_render",
     // url: "postgres://pkwqfmrt:Jag1KJ8Ug_qwj79XtDoq8pTLQlcNHV9k@babar.db.elephantsql.com/pkwqfmrt", 

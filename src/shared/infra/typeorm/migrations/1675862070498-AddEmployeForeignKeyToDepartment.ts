@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from "typeorm"
 
-export class AddEmployeForeignKeyToDepartmenta1675862070498 implements MigrationInterface {
+export class AddEmployeForeignKeyToDepartment1675862070498 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     
-    await queryRunner.addColumn('employees_api_a', new TableColumn(
+    await queryRunner.addColumn('employees', new TableColumn(
       {
       name: 'department_id',
       type: 'uuid',
@@ -13,11 +13,11 @@ export class AddEmployeForeignKeyToDepartmenta1675862070498 implements Migration
     ))
 
     await queryRunner.createForeignKey(
-      'employees_api_a',
+      'employees',
       new TableForeignKey({
         name: 'EmployeeDepartment',
         columnNames: ['department_id'],
-        referencedTableName: 'departments_api_a',
+        referencedTableName: 'departments',
         referencedColumnNames: ['id'],
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE'
@@ -26,9 +26,9 @@ export class AddEmployeForeignKeyToDepartmenta1675862070498 implements Migration
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('employees_api_a', 'EmployeeDepartment');
+    await queryRunner.dropForeignKey('employees', 'EmployeeDepartment');
 
-    await queryRunner.dropColumn('employees_api_a', 'department_id');
+    await queryRunner.dropColumn('employees', 'department_id');
 
   }
 

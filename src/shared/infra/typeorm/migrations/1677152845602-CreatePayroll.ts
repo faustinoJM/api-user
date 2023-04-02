@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreatePayrolla1677152845602 implements MigrationInterface {
+export class CreatePayroll1677152845602 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'payrolls_api_a',
+        name: 'payrolls',
         columns: [
           {
             name: 'id',
@@ -143,7 +143,7 @@ export class CreatePayrolla1677152845602 implements MigrationInterface {
         foreignKeys: [
           {
             name: 'PayrollEmployee',
-            referencedTableName: 'employees_api_a',
+            referencedTableName: 'employees',
             referencedColumnNames: ['id'],
             columnNames: ['employee_uid'],
             onDelete: 'SET NULL',
@@ -156,7 +156,7 @@ export class CreatePayrolla1677152845602 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropTable('payrolls_api_a')
+    await queryRunner.dropTable('payrolls')
   }
 
 }

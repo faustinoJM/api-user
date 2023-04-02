@@ -1,10 +1,10 @@
 import { MigrationInterface, QueryRunner, TableColumn, TableForeignKey } from "typeorm"
 
-export class AddEmployeForeignKeyToPositiona1675862057786 implements MigrationInterface {
+export class AddEmployeForeignKeyToPosition1675862057786 implements MigrationInterface {
 
   public async up(queryRunner: QueryRunner): Promise<void> {
     
-    await queryRunner.addColumn('employees_api_a', new TableColumn(
+    await queryRunner.addColumn('employees', new TableColumn(
       {
       name: 'position_id',
       type: 'uuid',
@@ -13,11 +13,11 @@ export class AddEmployeForeignKeyToPositiona1675862057786 implements MigrationIn
     ))
 
     await queryRunner.createForeignKey(
-      'employees_api_a',
+      'employees',
       new TableForeignKey({
         name: 'EmployeePosition',
         columnNames: ['position_id'],
-        referencedTableName: 'positions_api_a',
+        referencedTableName: 'positions',
         referencedColumnNames: ['id'],
         onDelete: 'SET NULL',
         onUpdate: 'CASCADE'
@@ -26,9 +26,9 @@ export class AddEmployeForeignKeyToPositiona1675862057786 implements MigrationIn
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.dropForeignKey('employees_api_a', 'EmployeePosition');
+    await queryRunner.dropForeignKey('employees', 'EmployeePosition');
 
-    await queryRunner.dropColumn('employees_api_a', 'position_id');
+    await queryRunner.dropColumn('employees', 'position_id');
 
   }
 

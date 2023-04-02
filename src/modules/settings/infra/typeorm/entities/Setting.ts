@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuidv4  } from 'uuid';
 
-@Entity('settings_api_a')
+@Entity('settings')
 class Setting {
   @PrimaryColumn()
   id: string;

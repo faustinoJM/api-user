@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm"
 
-export class CreateSettingsa1678524971766 implements MigrationInterface {
+export class CreateSettings1678524971766 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
       await queryRunner.createTable(
         new Table({
-          name: 'settings_api_a',
+          name: 'settings',
           columns: [
             {
               name: 'id',
@@ -133,7 +133,7 @@ export class CreateSettingsa1678524971766 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-      await queryRunner.dropTable('settings_api_a')
+      await queryRunner.dropTable('settings')
     }
 
 }

@@ -3,7 +3,7 @@ import { v4 as uuidV4 } from "uuid";
 import { Employee } from "../../../../employees/infra/typeorm/entities/Employee";
 import { IPayrollDemo, ISalario } from "../../../useCases/createPayroll/CreatePayrollUseCase";
 
-@Entity("payrolls_api_a")
+@Entity("payrolls")
 class Payroll {
     @PrimaryColumn('uuid')
     id: string;
@@ -45,7 +45,7 @@ class Payroll {
     @Column()
     social_security: number;
 
-    @Column()
+    // @Column()
     nuit: number;
     
     @Column()

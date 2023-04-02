@@ -3,7 +3,7 @@ import { v4 as uuidV4 } from "uuid";
 import Department from "../../../../departments/infra/typeorm/entities/Department";
 import Position from "../../../../positions/infra/typeorm/entities/Position";
 
-@Entity("employees_api_a")
+@Entity("employees")
 class Employee {
     @PrimaryColumn('uuid')
     id?: string;
